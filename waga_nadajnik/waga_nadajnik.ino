@@ -90,7 +90,6 @@ void setup() {
 
   // transmit weight by LoRa
   LoRa.beginPacket();
-  LoRa.print("Weight = ");
   LoRa.print(weight);
   LoRa.endPacket();
 
