@@ -16,7 +16,7 @@ Adafruit_HX711 hx711(data_pin,clock_pin);
 // #define LED 2
 
 // deep slip parameters 
-const unsigned long Sleep_time = 10*1000000; // value before '*' in seconds
+const unsigned long Sleep_time = 3600*1000000; // value before '*' in seconds
 RTC_DATA_ATTR int32_t tare_value = 0;
 RTC_DATA_ATTR bool is_tared = false;
 
