@@ -4,10 +4,12 @@
 #define SS 5
 #define RST 22
 #define DIO0 21
+#define LED 2
 
 void setup() {
+  pinMode(LED, OUTPUT);
   Serial.begin(115200);
-  SPI.begin(18, 19, 23);
+  SPI.begin();
   LoRa.setPins(SS,RST,DIO0);
 
   while (!LoRa.begin(868E6)) {
@@ -29,6 +31,10 @@ void loop() {
   LoRa.print("Waga wynosi=");
   LoRa.print(++waga) ;
   LoRa.endPacket();
-  delay(300000);
+  digitalWrite(2, HIGH);
+  delay(500);
+  digitalWrite(2, LOW);
+  Serial.print("wyslano");
+  delay(10000);
 
 }

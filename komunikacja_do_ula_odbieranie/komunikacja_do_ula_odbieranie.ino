@@ -7,7 +7,7 @@
 
 void setup() {
   Serial.begin(115200);
-  SPI.begin(18, 19, 23);
+  SPI.begin();
   LoRa.setPins(SS,RST,DIO0);
 
   while (!LoRa.begin(868E6)) {
